@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Website Registration</title> 
+</head> 
+<body> 
+    <h2>Website Registration Form</h2> 
+    <form id="regForm"> 
+        Full Name: <input type="text" id="name"><br><br> 
+        Email: <input type="email" id="email"><br><br> 
+        Password: <input type="password" id="password"><br><br> 
+        Confirm Password: <input type="password" id="confirmPassword"><br><br> 
+        <button type="submit">Register</button> 
+    </form> 
+    <p id="message"></p> 
+  
+    <script> 
+        document.getElementById("regForm").addEventListener("submit", function (e) { 
+            e.preventDefault(); 
+            const name = document.getElementById("name").value.trim(); 
+            const email = document.getElementById("email").value.trim();
+               const password = document.getElementById("password").value; 
+            const confirm = document.getElementById("confirmPassword").value; 
+            const message = document.getElementById("message"); 
+  
+            if (!name || !email || !password || !confirm) { 
+                message.textContent = "Please fill in all fields."; 
+            } else if (password !== confirm) { 
+                message.textContent = "Passwords do not match."; 
+            } else { 
+                message.textContent = "Registration successful!"; 
+            } 
+        }); 
+    </script> 
+</body> 
+</html>

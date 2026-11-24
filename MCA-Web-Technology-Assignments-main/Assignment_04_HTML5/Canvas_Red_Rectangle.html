@@ -1,0 +1,10 @@
+<!-- Intermediate Questions | Q15. Make a canvas with a red filled rectangle using JavaScript. -->
+<canvas id="c1" width="300" height="150" style="border:1px solid #000;"></canvas>
+
+<script>
+  const canvas = document.getElementById("c1");
+  const ctx = canvas.getContext("2d");
+
+  ctx.fillStyle = "red";
+  ctx.fillRect(50, 30, 200, 90);   // x, y, width, height
+</script>

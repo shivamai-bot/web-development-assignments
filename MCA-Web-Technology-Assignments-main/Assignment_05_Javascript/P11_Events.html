@@ -1,0 +1,22 @@
+
+<!DOCTYPE html> 
+<html> 
+<head><title>Mouse Events</title></head> 
+<body> 
+    <h2>JavaScript Mouse Events</h2> 
+    <button onclick="showEvent('onclick event')">Click Me</button> 
+    <button ondblclick="showEvent('double-click event')">Double Click Me</button> 
+    <button onmouseup="showEvent('mouseup event')">Release Mouse Here</button> 
+    <p onmouseover="showEvent('mouseover event')" 
+       style="padding:20px; background-color:lightyellow; width:250px;"> 
+        Move the mouse pointer over this text. 
+    </p> 
+    <p id="output">Event message will appear here.</p> 
+  
+    <script> 
+        function showEvent(message) { 
+            document.getElementById("output").textContent = message; 
+        } 
+    </script> 
+</body> 
+</html>

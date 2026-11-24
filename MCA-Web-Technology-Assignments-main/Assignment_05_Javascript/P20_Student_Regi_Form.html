@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>Student Registration Form</title></head> 
+<body> 
+    <h2>Student Registration Form</h2> 
+    <form id="studentForm"> 
+        Full Name: <input type="text" id="name"><br><br> 
+        Email: <input type="text" id="email"><br><br> 
+        Mobile Number: <input type="text" id="mobile" maxlength="10"><br><br> 
+        Course: <input type="text" id="course"><br><br> 
+        <button type="submit">Submit</button> 
+    </form> 
+    <p id="message"></p> 
+  
+    <script> 
+        document.getElementById("studentForm").addEventListener("submit", function (e) { 
+            e.preventDefault(); 
+            const name = document.getElementById("name").value.trim(); 
+            const email = document.getElementById("email").value.trim(); 
+            const mobile = document.getElementById("mobile").value.trim(); 
+            const course = document.getElementById("course").value.trim(); 
+            const message = document.getElementById("message"); 
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+            const mobilePattern = /^[0-9]{10}$/; 
+  
+            if (!name || !email || !mobile || !course) { 
+                message.textContent = "All fields are required."; 
+            } else if (!emailPattern.test(email)) { 
+                message.textContent = "Please enter a valid email address."; 
+            } else if (!mobilePattern.test(mobile)) { 
+                message.textContent = "Enter a valid 10-digit mobile number."; 
+            } else { 
+                message.textContent = "Student registration successful!"; 
+            } 
+        }); 
+    </script> 
+</body> 
+</html>

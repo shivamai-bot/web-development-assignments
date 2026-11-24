@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating </title>
+</head>
+
+<body>
+    <form>
+        <label for="experience">Rate your experience: <output id="ratingValue">5</output>/10</label>
+        <input type="range" id="experience" name="rating" min="1" max="10" value="5">
+    </form>
+    <script>
+        const rating = document.getElementById("experience");
+        const ratingValue = document.getElementById("ratingValue");
+        rating.addEventListener("input", () => ratingValue.value = rating.value);
+    </script>
+
+</body>
+
+</html>

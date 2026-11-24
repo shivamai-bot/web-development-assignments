@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+</head>
+
+<body>
+    <form>
+        <label for="bookingDate">Booking Date:</label>
+        <input type="date" id="bookingDate" name="bookingDate" required>
+        <button type="submit">Book</button>
+    </form>
+    <script>
+        const dateInput = document.getElementById("bookingDate");
+        const today = new Date();
+        const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
+            .toISOString().slice(0, 10);
+        dateInput.min = localToday;
+    </script>
+
+</body>
+
+</html>

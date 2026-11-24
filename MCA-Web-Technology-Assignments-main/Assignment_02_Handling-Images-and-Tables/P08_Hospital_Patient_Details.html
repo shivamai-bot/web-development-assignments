@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Patient Records</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid black; padding: 7px; text-align: left; }
+        th { background-color: #e8eef5; }
+    </style>
+</head>
+<body>
+    <h2>Hospital Patient Details</h2>
+    <table>
+        <tr>
+            <th>Patient ID</th><th>Patient Name</th><th>Age</th><th>Gender</th>
+            <th>Doctor</th><th>Room No.</th><th>Status</th>
+        </tr>
+        <tr>
+            <td>P101</td><td>Rahul</td><td>35</td><td>M</td>
+            <td rowspan="2">Dr. Shrikant Patil</td><td>201</td><td>Admitted</td>
+        </tr>
+        <tr>
+            <td>P102</td><td>Akash</td><td>55</td><td>M</td><td>207</td><td>Admitted</td>
+        </tr>
+        <tr>
+            <td>P103</td><td>Reena</td><td>41</td><td>F</td>
+            <td rowspan="3">Dr. Neeta Jogalekar</td><td>402</td><td>Discharged</td>
+        </tr>
+        <tr>
+            <td>P104</td><td>Sneha</td><td>42</td><td>F</td><td>205</td><td>Discharged</td>
+        </tr>
+        <tr>
+            <td>P105</td><td>Prakash</td><td>87</td><td>M</td><td>310</td><td>Admitted</td>
+        </tr>
+        <tr>
+            <td>P106</td><td>Amit</td><td>28</td><td>M</td><td>Dr. Rajendra Deshmukh</td><td>210</td><td>Admitted</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Online Examination</title> 
+</head> 
+<body> 
+    <h2>Online Examination Form</h2> 
+    <form id="examForm"> 
+        <label>Student Name:</label> 
+        <input type="text" id="studentName" required><br><br> 
+  
+        <p>1. Which language is used to make web pages interactive?</p> 
+        <label><input type="radio" name="q1" value="HTML" required> HTML</label> 
+        <label><input type="radio" name="q1" value="JavaScript"> JavaScript</label> 
+        <label><input type="radio" name="q1" value="CSS"> CSS</label> 
+  
+        <p>2. Which tag is used to link JavaScript in HTML?</p> 
+        <label><input type="radio" name="q2" value="script" required> &lt;script&gt;</label> 
+        <label><input type="radio" name="q2" value="style"> &lt;style&gt;</label> 
+        <label><input type="radio" name="q2" value="p"> &lt;p&gt;</label><br><br> 
+  
+        <button type="submit">Submit Exam</button> 
+    </form> 
+    <h3 id="result"></h3> 
+  
+    <script> 
+        document.getElementById("examForm").addEventListener("submit", function (e) { 
+            e.preventDefault(); 
+            const name = document.getElementById("studentName").value.trim(); 
+            const q1 = document.querySelector('input[name="q1"]:checked').value; 
+            const q2 = document.querySelector('input[name="q2"]:checked').value; 
+            let score = 0; 
+            if (q1 === "JavaScript") score++; 
+            if (q2 === "script") score++; 
+            document.getElementById("result").textContent = 
+                name + ", your score is " + score + " out of 2."; 
+        }); 
+    </script> 
+</body> 
+</html>

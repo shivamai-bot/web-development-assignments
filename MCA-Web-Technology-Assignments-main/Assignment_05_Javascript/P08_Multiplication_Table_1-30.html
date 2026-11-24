@@ -1,0 +1,19 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>Tables from 1 to 30</title></head> 
+<body> 
+    <h2>Multiplication Tables from 1 to 30</h2> 
+    <pre id="output"></pre> 
+    <script> 
+        let result = ""; 
+        for (let n = 1; n <= 30; n++) { 
+            result += "Table of " + n + "\n"; 
+            for (let i = 1; i <= 10; i++) { 
+                result += n + " x " + i + " = " + (n * i) + "\n"; 
+            } 
+            result += "\n"; 
+        } 
+        document.getElementById("output").textContent = result; 
+    </script> 
+</body> 
+</html>

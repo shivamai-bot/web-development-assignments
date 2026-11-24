@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>Maximum of Two Numbers</title></head> 
+<body> 
+    <h2>Find Maximum Number</h2> 
+    First Number: <input type="number" id="num1"><br><br> 
+    Second Number: <input type="number" id="num2"><br><br> 
+    <button onclick="findMaximum()">Find Maximum</button> 
+    <p id="output"></p> 
+  
+    <script> 
+        function findMaximum() { 
+            const x = document.getElementById("num1").value; 
+            const y = document.getElementById("num2").value; 
+            if (x === "" || y === "") { 
+                document.getElementById("output").textContent = 
+                    "Please enter both numbers."; 
+                return; 
+            } 
+            const maximum = Math.max(Number(x), Number(y)); 
+            document.getElementById("output").textContent = 
+                "Maximum number is: " + maximum; 
+        } 
+    </script> 
+</body> 
+</html>

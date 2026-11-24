@@ -1,0 +1,44 @@
+<!-- Save this first part as Q16_First_Page.html --> 
+<!DOCTYPE html> 
+<html> 
+<head><title>Fibonacci - First Page</title></head> 
+<body> 
+    <h2>Fibonacci Series</h2> 
+    <p>Click the button to display the first 10 terms on the next page.</p> 
+    <button onclick="showSeries()">Show</button> 
+  
+    <script> 
+        function showSeries() { 
+            let a = 0, b = 1; 
+            const terms = []; 
+            for (let i = 1; i <= 10; i++) { 
+                terms.push(a); 
+                const next = a + b; 
+                a = b; 
+                b = next; 
+            } 
+            sessionStorage.setItem("fibonacciSeries", terms.join(", ")); 
+            window.location.href = "Q16_Second_Page.html"; 
+        } 
+    </script> 
+</body> 
+</html> 
+  
+<!-- Save this second part separately as Q16_Second_Page.html --> 
+<!DOCTYPE html> 
+<html> 
+<head><title>Fibonacci - Second Page</title></head> 
+<body> 
+    <h2>First 10 Fibonacci Terms</h2> 
+    <textarea id="series" rows="3" cols="45" readonly></textarea><br><br> 
+    <button onclick="goBack()">Back</button> 
+  
+    <script> 
+        document.getElementById("series").value = 
+            sessionStorage.getItem("fibonacciSeries") || "No series found."; 
+        function goBack() { 
+            window.location.href = "Q16_First_Page.html"; 
+        } 
+    </script> 
+</body> 
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>Dropdown Number List</title></head> 
+<body> 
+    <h2>Select Maximum 10 Numbers</h2> 
+    <select id="numberList"> 
+        <option value="1">1</option> 
+        <option value="2">2</option> 
+        <option value="3">3</option> 
+        <option value="4">4</option> 
+        <option value="5">5</option> 
+        <option value="6">6</option> 
+        <option value="7">7</option> 
+        <option value="8">8</option> 
+        <option value="9">9</option> 
+        <option value="10">10</option> 
+    </select> 
+    <button onclick="appendNumber()">&#8594;</button><br><br> 
+    <textarea id="selectedNumbers" rows="3" cols="35" readonly></textarea> 
+    <p id="message"></p> 
+  
+    <script> 
+        let numbers = []; 
+        function appendNumber() { 
+            const message = document.getElementById("message"); 
+            if (numbers.length >= 10) { 
+                message.textContent = "Maximum 10 numbers are allowed."; 
+                return; 
+            } 
+            const selected = document.getElementById("numberList").value; 
+            numbers.push(selected); 
+            document.getElementById("selectedNumbers").value = numbers.join(", "); 
+            message.textContent = numbers.length + " number(s) selected."; 
+        } 
+    </script> 
+</body> 
+</html>

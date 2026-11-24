@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Step </title>
+</head>
+
+<body>
+    <form id="multiStepForm">
+        <section class="step">
+            <h3>Step 1: Personal Info</h3>
+            <label>Name: <input name="name" required></label>
+            <label>Date of Birth: <input type="date" name="dob" required></label>
+            <button type="button" class="next">Next</button>
+        </section>
+        <section class="step" hidden>
+            <h3>Step 2: Contact Info</h3>
+            <label>Email: <input type="email" name="email" required></label>
+            <label>Phone: <input type="tel" name="phone" required></label>
+            <button type="button" class="back">Back</button>
+            <button type="button" class="next">Next</button>
+        </section>
+        <section class="step" hidden>
+            <h3>Step 3: Review & Submit</h3>
+            <p>Check your details, then submit the form.</p>
+            <button type="button" class="back">Back</button>
+            <button type="submit">Submit</button>
+        </section>
+    </form>
+    <script>
+        const form = document.getElementById("multiStepForm");
+        const steps = [...form.querySelectorAll(".step")];
+        let current = 0;
+        function showStep(index) {
+            steps.forEach((step, i) => step.hidden = i !== index);
+        }
+        form.querySelectorAll(".next").forEach(button => button.addEventListener("click", () => {
+            const fields = [...steps[current].querySelectorAll("input")];
+            const valid = fields.every(field => field.reportValidity());
+            if (valid) { current++; showStep(current); }
+        }));
+        form.querySelectorAll(".back").forEach(button => button.addEventListener("click", () => {
+            current--; showStep(current);
+        }));
+        form.addEventListener("submit", event => {
+            if (!form.reportValidity()) event.preventDefault();
+        });
+    </script>
+
+</body>
+
+</html>

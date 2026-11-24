@@ -1,0 +1,37 @@
+<!-- Advanced Questions | Q3. Combine <figure> with image thumbnails, each having captions (like a mini photo gallery). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Gallery</title>
+  <style>
+    .gallery { display: flex; flex-wrap: wrap; gap: 15px; }
+    figure { margin: 0; width: 160px; text-align: center; border: 1px solid #ccc;
+             padding: 8px; border-radius: 6px; background: #fafafa; }
+    figure img { width: 100%; height: 110px; object-fit: cover; border-radius: 4px; }
+    figcaption { font-size: 14px; margin-top: 6px; color: #333; }
+  </style>
+</head>
+<body>
+  <h1>My Travel Gallery</h1>
+
+  <section class="gallery">
+    <figure>
+      <img src="thumb1.jpg" alt="Beach">
+      <figcaption>Goa Beach</figcaption>
+    </figure>
+    <figure>
+      <img src="thumb2.jpg" alt="Mountains">
+      <figcaption>Manali Mountains</figcaption>
+    </figure>
+    <figure>
+      <img src="thumb3.jpg" alt="Fort">
+      <figcaption>Jaipur Fort</figcaption>
+    </figure>
+    <figure>
+      <img src="thumb4.jpg" alt="Backwaters">
+      <figcaption>Kerala Backwaters</figcaption>
+    </figure>
+  </section>
+</body>
+</html>

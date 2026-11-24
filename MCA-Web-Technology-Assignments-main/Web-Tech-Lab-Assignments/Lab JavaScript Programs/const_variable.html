@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Const </title>
+    <script>
+        // arrays
+        const cars = ["Tata","BMW","Audi"];
+        cars[0] = "Pagani"; //Add Element at specific index number in array
+        cars.push("Ford");  //Add element at last
+        document.write(cars);
+        console.log(cars);
+        window.alert(cars);
+
+        //object
+        const car = {company:"Tata",type:"SUV",color:"White"}
+        car.name = "Nexon";
+
+        document.write(car); // can't show the output
+        console.log(car); // can show output on console
+        window.alert(car); // can't show the output
+
+        //Block Scope
+        const x = 100;
+        document.write(x);
+        console.log(x);
+        {
+            const x = 200;
+        document.write(x);
+        console.log(x);
+        }
+
+
+        //
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

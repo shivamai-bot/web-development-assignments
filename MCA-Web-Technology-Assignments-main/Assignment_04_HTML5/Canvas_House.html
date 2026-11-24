@@ -1,0 +1,29 @@
+<!-- Advanced Questions | Q6. Write JavaScript to draw a house shape on <canvas> (rectangle for house, triangle for roof, square for window). -->
+<canvas id="house" width="400" height="300" style="border:1px solid #000;"></canvas>
+
+<script>
+  const ctx = document.getElementById("house").getContext("2d");
+
+  // House body (rectangle)
+  ctx.fillStyle = "#f4d03f";
+  ctx.fillRect(100, 140, 200, 130);
+
+  // Roof (triangle)
+  ctx.beginPath();
+  ctx.moveTo(80, 140);
+  ctx.lineTo(200, 50);
+  ctx.lineTo(320, 140);
+  ctx.closePath();
+  ctx.fillStyle = "#c0392b";
+  ctx.fill();
+
+  // Door
+  ctx.fillStyle = "#6e4b2a";
+  ctx.fillRect(185, 200, 40, 70);
+
+  // Window (square)
+  ctx.fillStyle = "#85c1e9";
+  ctx.fillRect(125, 170, 40, 40);
+  ctx.strokeStyle = "#000";
+  ctx.strokeRect(125, 170, 40, 40);
+</script>

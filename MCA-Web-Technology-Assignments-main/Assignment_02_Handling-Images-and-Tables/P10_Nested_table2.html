@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Inside Another Table</title>
+    <style>
+        table { border-collapse: collapse; }
+        .outer { width: 75%; border: 2px solid black; }
+        .outer td { border: 1px solid black; padding: 12px; }
+        .inner { width: 100%; border: 2px solid blue; }
+        .inner td { border: 1px solid blue; padding: 12px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h2>Table Inside a Table Cell</h2>
+    <table class="outer">
+        <tr>
+            <td rowspan="2">Outer Table Cell</td>
+            <td>
+                Outer Table Cell
+                <table class="inner">
+                    <tr><td>Inner Table 1</td><td>Inner Table 2</td></tr>
+                    <tr><td>Inner Table 3</td><td>Inner Table 4</td></tr>
+                </table>
+            </td>
+        </tr>
+        <tr><td>Outer Table Cell</td></tr>
+    </table>
+</body>
+</html>

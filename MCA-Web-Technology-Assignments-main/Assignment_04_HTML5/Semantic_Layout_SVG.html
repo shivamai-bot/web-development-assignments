@@ -1,0 +1,55 @@
+<!-- Advanced Questions | Q9. Build a webpage that has a semantic structure and an inline SVG chart (e.g., bar chart using <rect>). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sales Report</title>
+</head>
+<body>
+  <header>
+    <h1>Quarterly Sales Report</h1>
+  </header>
+
+  <nav>
+    <a href="#">Home</a> | <a href="#">Reports</a> | <a href="#">Contact</a>
+  </nav>
+
+  <main>
+    <article>
+      <h2>Sales by Quarter (in lakhs)</h2>
+      <p>The chart below shows how sales grew through the year.</p>
+
+      <figure>
+        <svg width="360" height="240" viewBox="0 0 360 240">
+          <!-- Axes -->
+          <line x1="40" y1="10"  x2="40"  y2="200" stroke="black" />
+          <line x1="40" y1="200" x2="350" y2="200" stroke="black" />
+
+          <!-- Bars -->
+          <rect x="60"  y="120" width="50" height="80"  fill="steelblue" />
+          <rect x="130" y="90"  width="50" height="110" fill="seagreen" />
+          <rect x="200" y="60"  width="50" height="140" fill="orange" />
+          <rect x="270" y="30"  width="50" height="170" fill="crimson" />
+
+          <!-- Labels -->
+          <text x="72"  y="220" font-size="13">Q1</text>
+          <text x="142" y="220" font-size="13">Q2</text>
+          <text x="212" y="220" font-size="13">Q3</text>
+          <text x="282" y="220" font-size="13">Q4</text>
+
+          <!-- Values -->
+          <text x="75"  y="115" font-size="12">40</text>
+          <text x="145" y="85"  font-size="12">55</text>
+          <text x="215" y="55"  font-size="12">70</text>
+          <text x="285" y="25"  font-size="12">85</text>
+        </svg>
+        <figcaption>Fig 1: Bar chart of quarterly sales.</figcaption>
+      </figure>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Sales Dept.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!-- Advanced Questions | Q5. Draw a sunset scene in SVG (sun = circle, ground = rectangle, rays = lines). -->
+<svg width="400" height="300" viewBox="0 0 400 300">
+  <!-- Sky -->
+  <rect width="400" height="300" fill="#ffb86b" />
+
+  <!-- Sun (half hidden behind the ground) -->
+  <circle cx="200" cy="200" r="60" fill="#ffdd33" />
+
+  <!-- Sun rays -->
+  <g stroke="#ffdd33" stroke-width="4" stroke-linecap="round">
+    <line x1="200" y1="115" x2="200" y2="85" />
+    <line x1="140" y1="140" x2="118" y2="118" />
+    <line x1="260" y1="140" x2="282" y2="118" />
+    <line x1="115" y1="190" x2="85"  y2="185" />
+    <line x1="285" y1="190" x2="315" y2="185" />
+  </g>
+
+  <!-- Ground -->
+  <rect x="0" y="200" width="400" height="100" fill="#3b7a3b" />
+</svg>

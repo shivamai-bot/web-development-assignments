@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disabled Field</title>
+</head>
+
+<body>
+    <form id="requiredForm">
+        <label for="requiredFullName">Name:</label>
+        <input id="requiredFullName" name="name" required>
+        <label for="requiredMail">Email:</label>
+        <input type="email" id="requiredMail" name="email" required>
+        <button id="requiredSubmit" type="submit" disabled>Submit</button>
+    </form>
+    <script>
+        const requiredForm = document.getElementById("requiredForm");
+        const requiredSubmit = document.getElementById("requiredSubmit");
+        function updateButton() {
+            requiredSubmit.disabled = !requiredForm.checkValidity();
+        }
+        requiredForm.addEventListener("input", updateButton);
+        requiredForm.addEventListener("change", updateButton);
+    </script>
+
+</body>
+
+</html>

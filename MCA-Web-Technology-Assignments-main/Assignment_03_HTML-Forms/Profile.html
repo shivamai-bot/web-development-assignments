@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+
+<body>
+    <form action="/save-profile" method="post" enctype="multipart/form-data">
+        <label for="profileName">Name:</label>
+        <input type="text" id="profileName" name="name" required>
+        <label for="profilePicture">Profile Picture:</label>
+        <input type="file" id="profilePicture" name="picture" accept="image/*">
+        <label for="themeColor">Colour Theme:</label>
+        <input type="color" id="themeColor" name="theme" value="#3366cc">
+        <button type="submit">Save</button>
+    </form>
+
+</body>
+
+</html>

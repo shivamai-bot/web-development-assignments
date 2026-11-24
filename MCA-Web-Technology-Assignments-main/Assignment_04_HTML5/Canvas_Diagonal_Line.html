@@ -1,0 +1,13 @@
+<!-- Intermediate Questions | Q16. Draw a diagonal line on a canvas from top-left to bottom-right. -->
+<canvas id="c2" width="300" height="200" style="border:1px solid #000;"></canvas>
+
+<script>
+  const ctx = document.getElementById("c2").getContext("2d");
+
+  ctx.beginPath();
+  ctx.moveTo(0, 0);          // top-left
+  ctx.lineTo(300, 200);      // bottom-right
+  ctx.lineWidth = 3;
+  ctx.strokeStyle = "black";
+  ctx.stroke();
+</script>

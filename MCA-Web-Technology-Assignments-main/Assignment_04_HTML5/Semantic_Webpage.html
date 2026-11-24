@@ -1,0 +1,67 @@
+<!-- Advanced Questions | Q1. Build a complete semantic webpage layout using <header>, <nav>, <main>, <article>, <aside>, <footer> with actual demo content. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Today</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 0; line-height: 1.6; }
+    header { background: #1f3a5f; color: #fff; padding: 20px; text-align: center; }
+    nav { background: #e8eef5; padding: 10px 20px; }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; }
+    nav a { text-decoration: none; color: #1f3a5f; font-weight: bold; }
+    .container { display: flex; gap: 20px; padding: 20px; }
+    main { flex: 3; }
+    article { border-bottom: 1px solid #ccc; margin-bottom: 20px; padding-bottom: 10px; }
+    aside { flex: 1; background: #f5f5f5; padding: 15px; border-radius: 6px; }
+    footer { background: #1f3a5f; color: #fff; text-align: center; padding: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tech Today</h1>
+    <p>Your daily dose of technology news</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Reviews</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <main>
+      <article>
+        <h2>AI Is Changing How We Work</h2>
+        <p>Published on <time datetime="2026-10-28">28 October 2026</time></p>
+        <p>Artificial intelligence tools are helping teams write, design and
+           analyse data faster than ever before.</p>
+      </article>
+
+      <article>
+        <h2>The Rise of Foldable Phones</h2>
+        <p>Published on <time datetime="2026-10-25">25 October 2026</time></p>
+        <p>Foldable devices are becoming lighter, cheaper and more durable.</p>
+      </article>
+    </main>
+
+    <aside>
+      <h3>Trending</h3>
+      <ul>
+        <li><a href="#">Top 5 Laptops</a></li>
+        <li><a href="#">Cybersecurity Tips</a></li>
+        <li><a href="#">Cloud Computing 101</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Tech Today. All rights reserved.</p>
+  </footer>
+</body>
+</html>

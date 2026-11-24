@@ -1,0 +1,58 @@
+<!-- Advanced Questions | Q4. Design a newspaper layout using <section>, <article>, and <aside> with proper structure. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Daily Chronicle</title>
+  <style>
+    body { font-family: Georgia, serif; margin: 0 auto; max-width: 1000px; padding: 10px; }
+    header { text-align: center; border-bottom: 4px double #000; margin-bottom: 15px; }
+    .page { display: flex; gap: 20px; }
+    .content { flex: 3; }
+    .content section { margin-bottom: 20px; }
+    .content section h2 { border-bottom: 2px solid #000; }
+    .content .cols { display: flex; gap: 15px; }
+    .content article { flex: 1; }
+    aside { flex: 1; background: #f1efe7; padding: 12px; border-left: 3px solid #000; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Daily Chronicle</h1>
+    <p><time datetime="2026-10-31">Saturday, 31 October 2026</time></p>
+  </header>
+
+  <div class="page">
+    <div class="content">
+      <section>
+        <h2>Top Stories</h2>
+        <div class="cols">
+          <article>
+            <h3>City Opens New Metro Line</h3>
+            <p>Thousands of commuters rode the new line on its first day.</p>
+          </article>
+          <article>
+            <h3>Local School Wins National Award</h3>
+            <p>Students were honoured for their science innovation project.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sports</h2>
+        <article>
+          <h3>Home Team Clinches Title</h3>
+          <p>A last-minute goal sealed a thrilling 2-1 victory.</p>
+        </article>
+      </section>
+    </div>
+
+    <aside>
+      <h3>Weather</h3>
+      <p>Sunny, 28&deg;C</p>
+      <h3>Quote of the Day</h3>
+      <p>Small steps every day lead to big results.</p>
+    </aside>
+  </div>
+</body>
+</html>

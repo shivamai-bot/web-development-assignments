@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Attributes</title>
+    <style>
+        table {
+            width: 80%;
+            border: 2px solid black;
+            border-collapse: separate;
+            border-spacing: 4px;
+            background-color: #f5f8fc;
+        }
+        caption { caption-side: top; font-weight: bold; padding: 8px; }
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        th { background-color: #dce8f5; }
+        .highlight { background-color: #fff0cc; }
+    </style>
+</head>
+<body>
+    <h2>Demonstration of Table Attributes</h2>
+    <table>
+        <caption>Employee Information</caption>
+        <tr><th>Employee ID</th><th>Name</th><th>Department</th><th>Status</th></tr>
+        <tr><td>1</td><td>Pooja</td><td>IT</td><td class="highlight">Active</td></tr>
+        <tr><td>2</td><td>Sakshi</td><td>HR</td><td>Active</td></tr>
+        <tr><td colspan="3">Total Employees</td><td>2</td></tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>Factorial</title></head> 
+<body> 
+    <h2>Find Factorial of a Number</h2> 
+    Enter Number: <input type="number" id="number" min="0"> 
+    <button onclick="findFactorial()">Calculate</button> 
+    <p id="output"></p> 
+  
+    <script> 
+        function findFactorial() { 
+            const value = document.getElementById("number").value; 
+            const n = Number(value); 
+            if (value === "" || !Number.isInteger(n) || n < 0) { 
+                document.getElementById("output").textContent = 
+                    "Please enter a non-negative whole number."; 
+                return; 
+            } 
+            let factorial = 1; 
+            for (let i = 1; i <= n; i++) factorial *= i; 
+            document.getElementById("output").textContent = 
+                "Factorial of " + n + " is " + factorial; 
+        } 
+    </script> 
+</body> 
+</html>

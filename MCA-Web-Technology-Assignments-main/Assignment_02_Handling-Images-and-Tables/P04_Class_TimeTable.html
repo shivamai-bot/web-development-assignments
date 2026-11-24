@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Time Table</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; text-align: center; }
+        th, td { border: 1px solid black; padding: 9px; }
+        th { background-color: #dce8f5; }
+        .lunch { background-color: #fff0cc; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>MCA Class Time Table</h2>
+    <table>
+        <tr>
+            <th>Day</th><th>9:00-10:00</th><th>10:00-11:00</th>
+            <th>11:00-12:00</th><th>12:00-1:00</th>
+            <th>1:00-2:00</th><th>2:00-3:00</th>
+        </tr>
+        <tr>
+            <th>Monday</th><td>Java</td><td>Web Technology</td><td>Python</td>
+            <td class="lunch" rowspan="5">Lunch Break</td><td>DBMS</td><td>Practical</td>
+        </tr>
+        <tr><th>Tuesday</th><td>Python</td><td>Java</td><td>DBMS</td><td>Web Technology</td><td>Library</td></tr>
+        <tr><th>Wednesday</th><td>Web Technology</td><td>DBMS</td><td>Java</td><td>Python</td><td>Practical</td></tr>
+        <tr><th>Thursday</th><td>DBMS</td><td>Python</td><td>Web Technology</td><td>Java</td><td>Sports</td></tr>
+        <tr><th>Friday</th><td>Java</td><td>Practical</td><td>DBMS</td><td>Web Technology</td><td>Seminar</td></tr>
+    </table>
+</body>
+</html>

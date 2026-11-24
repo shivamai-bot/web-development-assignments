@@ -1,0 +1,48 @@
+Solution: 
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Student Marksheet</title> 
+</head> 
+<body> 
+    <h2>Student Marksheet</h2> 
+    Seat Number: <input type="text" id="seatNo"> 
+    <button onclick="showMarksheet()">Show Marksheet</button> 
+    <div id="output"></div> 
+  
+    <script> 
+        // Sample records: replace these details with actual student records. 
+        const students = { 
+            "101": { name: "Amit Patil", marks: [78, 85, 69, 90, 82] }, 
+            "102": { name: "Neha Sharma", marks: [88, 76, 91, 80, 86] }, 
+            "103": { name: "Rahul More", marks: [65, 72, 70, 68, 75] } 
+        }; 
+        const subjects = ["English", "Computer", "Maths", "Science", "Web Tech"]; 
+  
+        function showMarksheet() { 
+            const seat = document.getElementById("seatNo").value.trim(); 
+            const student = students[seat]; 
+            const output = document.getElementById("output"); 
+  
+            if (!student) { 
+                output.textContent = "No student found for this seat number."; 
+                return; 
+            } 
+  
+            const total = student.marks.reduce((sum, mark) => sum + mark, 0); 
+            const percentage = total / student.marks.length; 
+            let rows = ""; 
+            subjects.forEach((subject, index) => { 
+                rows += `<tr><td>${subject}</td><td>${student.marks[index]}</td></tr>`; 
+            }); 
+            output.innerHTML = `<h3>Name: ${student.name}</h3> 
+                <p>Seat Number: ${seat}</p> 
+                <table border="1" cellpadding="6"> 
+                    <tr><th>Subject</th><th>Marks</th></tr>${rows} 
+                </table> 
+                <p>Total: ${total} / 500</p> 
+                <p>Percentage: ${percentage.toFixed(2)}%</p>`; 
+        } 
+    </script> 
+</body> 
+</html> 

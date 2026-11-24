@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>JavaScript Calculator</title></head> 
+<body> 
+    <h2>Basic Calculator</h2> 
+    First Number: <input type="number" id="num1"><br><br> 
+    Second Number: <input type="number" id="num2"><br><br> 
+    <button onclick="calculate('+')">Add</button> 
+    <button onclick="calculate('-')">Subtract</button> 
+    <button onclick="calculate('*')">Multiply</button> 
+    <button onclick="calculate('/')">Divide</button> 
+    <h3 id="result">Result: </h3> 
+  
+    <script> 
+        function calculate(operator) { 
+            const a = Number(document.getElementById("num1").value); 
+            const b = Number(document.getElementById("num2").value); 
+            if (document.getElementById("num1").value === "" || 
+                document.getElementById("num2").value === "") { 
+                document.getElementById("result").textContent = "Enter both numbers."; 
+                return; 
+            } 
+            let answer; 
+            if (operator === "+") answer = a + b; 
+            else if (operator === "-") answer = a - b; 
+            else if (operator === "*") answer = a * b; 
+            else if (operator === "/") { 
+                if (b === 0) { 
+                    document.getElementById("result").textContent = 
+                        "Cannot divide by zero."; 
+                    return; 
+                } 
+                answer = a / b; 
+            } 
+            document.getElementById("result").textContent = "Result: " + answer; 
+        } 
+    </script> 
+</body> 
+</html>

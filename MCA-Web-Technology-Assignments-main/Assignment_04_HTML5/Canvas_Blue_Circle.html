@@ -1,0 +1,11 @@
+<!-- Intermediate Questions | Q17. Use <canvas> to draw a filled blue circle. -->
+<canvas id="c3" width="300" height="200" style="border:1px solid #000;"></canvas>
+
+<script>
+  const ctx = document.getElementById("c3").getContext("2d");
+
+  ctx.beginPath();
+  ctx.arc(150, 100, 60, 0, 2 * Math.PI);   // x, y, radius, start, end
+  ctx.fillStyle = "blue";
+  ctx.fill();
+</script>

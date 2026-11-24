@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>Arithmetic Operations</title></head> 
+<body> 
+    <h2>Arithmetic Operations</h2> 
+    First Number: <input type="number" id="a"><br><br> 
+    Second Number: <input type="number" id="b"><br><br> 
+    <button onclick="add()">Addition</button> 
+    <button onclick="subtract()">Subtraction</button> 
+    <button onclick="multiply()">Multiplication</button> 
+    <button onclick="divide()">Division</button> 
+    <p id="result"></p> 
+  
+    <script> 
+        function getNumbers() { 
+            const x = document.getElementById("a").value; 
+            const y = document.getElementById("b").value; 
+            if (x === "" || y === "") { 
+                document.getElementById("result").textContent = 
+                    "Please enter both numbers."; 
+                return null; 
+            } 
+            return [Number(x), Number(y)]; 
+        } 
+        function add() { 
+            const n = getNumbers(); 
+            if (n) document.getElementById("result").textContent = n[0] + n[1]; 
+        } 
+        function subtract() { 
+            const n = getNumbers(); 
+            if (n) document.getElementById("result").textContent = n[0] - n[1]; 
+        } 
+        function multiply() { 
+            const n = getNumbers(); 
+            if (n) document.getElementById("result").textContent = n[0] * n[1]; 
+        } 
+        function divide() { 
+            const n = getNumbers(); 
+            if (!n) return; 
+            if (n[1] === 0) { 
+                document.getElementById("result").textContent = 
+                    "Cannot divide by zero."; 
+            } else { 
+                document.getElementById("result").textContent = n[0] / n[1]; 
+            } 
+        } 
+    </script> 
+</body> 
+</html>

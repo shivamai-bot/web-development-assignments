@@ -1,0 +1,15 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>Even Numbers</title></head> 
+<body> 
+    <h2>Even Numbers Between 1 and 100</h2> 
+    <p id="output"></p> 
+    <script> 
+        let result = ""; 
+        for (let i = 1; i <= 100; i++) { 
+            if (i % 2 === 0) result += i + " "; 
+        } 
+        document.getElementById("output").textContent = result; 
+    </script> 
+</body> 
+</html>

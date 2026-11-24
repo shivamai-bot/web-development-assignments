@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping Statement</title>
+</head>
+<body>
+    <script>
+        // While Loop
+        var i = 0;
+        while (i < 10) {
+            document.writeln(i)
+            i++;
+        }
+        document.write("<br>")
+
+        // Do-while Loop
+        var j = 1;
+        do{
+            document.writeln(j);
+            j++;
+        }while(j< 20)
+        document.write("<br>")
+
+        // For loops
+        for (let index = 0; index < 11; index++) {
+            document.writeln(index)
+            
+        }
+
+        document.write("<br>")
+        // For....In Loop
+        var x;
+        var arr = new Array(1,2,3,4,5,6,7,8,9,10);
+        // document.write(arr[2])
+        for(x in arr){
+            document.write(arr[x]+"<br>")
+        }
+    </script>
+</body>
+</html>

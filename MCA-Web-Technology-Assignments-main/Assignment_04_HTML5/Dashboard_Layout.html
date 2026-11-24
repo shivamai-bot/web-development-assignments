@@ -1,0 +1,91 @@
+<!-- Advanced Questions | Q10. Create a dashboard page with <header>, <nav>, <main>, <aside>, <footer>, plus an animated <canvas> graph. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f0f2f5; }
+    header { background: #263238; color: #fff; padding: 15px 20px; }
+    nav { background: #37474f; padding: 10px 20px; }
+    nav a { color: #fff; margin-right: 20px; text-decoration: none; }
+    .layout { display: flex; gap: 20px; padding: 20px; }
+    main { flex: 3; background: #fff; padding: 15px; border-radius: 8px; }
+    aside { flex: 1; background: #fff; padding: 15px; border-radius: 8px; }
+    footer { background: #263238; color: #fff; text-align: center; padding: 10px; }
+    canvas { width: 100%; max-width: 600px; background: #fafafa; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <header><h1>Analytics Dashboard</h1></header>
+
+  <nav>
+    <a href="#">Overview</a>
+    <a href="#">Reports</a>
+    <a href="#">Settings</a>
+  </nav>
+
+  <div class="layout">
+    <main>
+      <h2>Live Traffic</h2>
+      <canvas id="graph" width="600" height="300"></canvas>
+    </main>
+
+    <aside>
+      <h3>Quick Stats</h3>
+      <p>Visitors: <strong>1,254</strong></p>
+      <p>Orders: <strong>312</strong></p>
+      <p>Revenue: <strong>&#8377;84,500</strong></p>
+    </aside>
+  </div>
+
+  <footer><p>&copy; 2026 Analytics Co.</p></footer>
+
+  <script>
+    const canvas = document.getElementById("graph");
+    const ctx = canvas.getContext("2d");
+    const W = canvas.width, H = canvas.height;
+
+    const values = [];                 // data points
+    for (let i = 0; i < 30; i++) values.push(150);
+
+    function update() {
+      // Add a new random point and drop the oldest one
+      const last = values[values.length - 1];
+      let next = last + (Math.random() - 0.5) * 40;
+      next = Math.max(30, Math.min(H - 30, next));
+      values.push(next);
+      values.shift();
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+
+      // Grid lines
+      ctx.strokeStyle = "#e0e0e0";
+      ctx.lineWidth = 1;
+      for (let y = 0; y <= H; y += 50) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(W, y);
+        ctx.stroke();
+      }
+
+      // Line graph
+      ctx.beginPath();
+      const step = W / (values.length - 1);
+      values.forEach((v, i) => {
+        if (i === 0) ctx.moveTo(0, v);
+        else ctx.lineTo(i * step, v);
+      });
+      ctx.strokeStyle = "#1e88e5";
+      ctx.lineWidth = 3;
+      ctx.stroke();
+    }
+
+    setInterval(() => { update(); draw(); }, 200);   // animate every 200 ms
+    draw();
+  </script>
+</body>
+</html>

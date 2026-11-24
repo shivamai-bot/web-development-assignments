@@ -1,0 +1,19 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>Replace Letter m</title></head> 
+<body> 
+    <h2>Replace All m with a</h2> 
+    Enter a String: <input type="text" id="inputText"> 
+    <button onclick="replaceLetter()">Replace</button> 
+    <p id="output"></p> 
+  
+    <script> 
+        function replaceLetter() { 
+            const text = document.getElementById("inputText").value; 
+            const modified = text.replace(/m/g, "a"); 
+            document.getElementById("output").textContent = 
+                "Modified String: " + modified; 
+        } 
+    </script> 
+</body> 
+</html> 

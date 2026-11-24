@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>Print Multiplication Table</title></head> 
+<body> 
+    <h2>Print Multiplication Table</h2> 
+    Enter Number: <input type="text" id="number"> 
+    <button onclick="printTable()">Print Table</button><br><br> 
+    <textarea id="tableOutput" rows="12" cols="30" readonly></textarea> 
+  
+    <script> 
+        function printTable() { 
+            const value = document.getElementById("number").value.trim(); 
+            const n = Number(value); 
+            if (value === "" || !Number.isFinite(n)) { 
+                document.body.style.backgroundColor = "red"; 
+                document.getElementById("tableOutput").value = ""; 
+                alert("Please enter a valid number."); 
+                return; 
+            } 
+            document.body.style.backgroundColor = "white"; 
+            let result = ""; 
+            for (let i = 1; i <= 10; i++) { 
+                result += n + " x " + i + " = " + (n * i) + "\n"; 
+            } 
+            document.getElementById("tableOutput").value = result; 
+        } 
+    </script> 
+</body> 
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aria Font</title>
+</head>
+
+<body>
+    <form aria-label="User details form" role="form">
+        <label for="ariaName">Name:</label>
+        <input type="text" id="ariaName" name="name" aria-required="true" required>
+        <label for="ariaEmail">Email:</label>
+        <input type="email" id="ariaEmail" name="email" aria-required="true" required>
+        <fieldset>
+            <legend>Preferred contact method</legend>
+            <label><input type="radio" name="contact" value="Email"> Email</label>
+            <label><input type="radio" name="contact" value="Phone"> Phone</label>
+        </fieldset>
+        <label for="ariaMessage">Message:</label>
+        <textarea id="ariaMessage" name="message" aria-describedby="messageHelp"></textarea>
+        <small id="messageHelp">Enter your message in a few sentences.</small>
+        <button type="submit">Send</button>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Department Student List</title>
+    <style>
+        table { border-collapse: collapse; width: 70%; text-align: center; }
+        th, td { border: 1px solid black; padding: 8px; }
+        th { background-color: #e8eef5; }
+    </style>
+</head>
+<body>
+    <h2>Department-wise Student Details</h2>
+    <table>
+        <tr>
+            <th>Department</th><th>Student ID</th>
+            <th>Student Name</th><th>Semester</th>
+        </tr>
+        <tr><td rowspan="3">MCA</td><td>101</td><td>Rushiraj</td><td rowspan="3">II</td></tr>
+        <tr><td>102</td><td>Areen</td></tr>
+        <tr><td>103</td><td>Anish</td></tr>
+        <tr><td rowspan="2">MBA</td><td>201</td><td>Ayush</td><td rowspan="2">II</td></tr>
+        <tr><td>202</td><td>Shivam</td></tr>
+    </table>
+</body>
+</html>
